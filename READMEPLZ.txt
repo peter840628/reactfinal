@@ -11,3 +11,6 @@ And then you can do
 "git pull upstream develop" 
 
 to update all of your files according to what everyone's done.
+
+And just so this is in writing where everyone can see it:
+DON'T TRY TO PUSH TO THIS REPOSITORY. AGAIN, CREATE A NEW FORK AND PUSH TO THAT.

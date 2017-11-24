@@ -1,49 +1,63 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, Button, StyleSheet } from 'react-native';
+import { Image, Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default class HSComp extends Component {
 
-  static navigationOptions = {
-    title: 'NAME-OF-APP'
-  };
+    static navigationOptions = {
+        title: 'NAME-OF-APP'
+    };
 
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-      <View style={styles.container}>
-        <Text>Welcome to name-of-app! Select an option.</Text>
-        <Button
-            style={styles.button}
-            onPress={() => navigate('PickL')}
-            title="View/Select List"
-        />
-        <Button
-            style={styles.button}
-            onPress={() => navigate('NewL')}
-            title="Create New List"
-        />
-        <Button
-            style={styles.button}
-            onPress={() => navigate('EditI')}
-            title="Edit Items"
-        />
+    render() {
+        const {navigate} = this.props.navigation;
+        return (
+            <View style={styles.container}>
+
+      <Image source={require('../assets/icons/app-icon.png')} />
+
+        <Text style= {styles.Text}>Welcome to name-of-app! Select an option.</Text>
+
+            
+            <TouchableOpacity style={styles.button} onPress={() => navigate('PickL')}>
+                <Text style={styles.buttonText}> Existing Lists </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigate('NewL')}>
+                <Text style={styles.buttonText}> Create List </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigate('EditI')}>
+                <Text style={styles.buttonText}> Add Items </Text>
+            </TouchableOpacity>
+
       </View>
-    );
-  }
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  button: {
-    flex: 2,
-    margin: 200,
-    width: 400,
-    height: 200
-  }
+    container: {
+        flex: 1,
+        backgroundColor: '#85c1e9',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+    },
+    Text: {
+        flex: 2,
+        fontSize: 15,
+
+    },
+    button: {
+        flex: 4,
+        backgroundColor: '#85c1e9',
+        paddingLeft: 100,
+        paddingRight: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
